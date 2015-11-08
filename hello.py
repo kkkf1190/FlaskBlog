@@ -8,11 +8,10 @@ app=Flask(__name__)
 
 @app.route('/')
 def hello_world():
-	url = "http://news-at.zhihu.com/api/4/news/latest"
-	data=urllib.request.urlopen(url).read()
-	z_data=data.decode('UTF-8')
-	items = json.loads(z_data)
-	i=0
+	# url = "http://news-at.zhihu.com/api/4/news/latest"
+	# data=urllib.request.urlopen(url).read()
+	# z_data=data.decode('UTF-8')
+	# items = json.loads(z_data)
 	stories = ZhihuModel.objects()
 	return render_template('home.html',stories=stories)
 
